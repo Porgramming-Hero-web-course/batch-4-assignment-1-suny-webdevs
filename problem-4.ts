@@ -8,10 +8,20 @@ type Rectangle = {
   height: number
 }
 
-const calculateShapeArea = (param: Circle | Rectangle): number => {
-  if ("radius" in param) {
+type Shape = Circle | Rectangle
+
+const isCircle = (param: Shape): param is Circle => {
+  return param.shape === "circle"
+}
+
+const isRectangle = (param: Shape): param is Rectangle => {
+  return param.shape === "rectangle"
+}
+
+const calculateShapeArea = (param: Shape): number => {
+  if (isCircle(param)) {
     return parseFloat((Math.PI * param.radius ** 2).toFixed(2))
-  } else if ("width" in param) {
+  } else if (isRectangle(param)) {
     return param.width * param.height
   } else {
     return 0
