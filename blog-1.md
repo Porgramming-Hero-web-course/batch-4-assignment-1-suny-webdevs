@@ -1,4 +1,4 @@
-## Significance of Union (|) types and Intersection (&) types
+## Significance of Union (|) type and Intersection (&) type
 
 Union and intersection types are two powerful features in TypeScript that help developers work with combinations of types in flexible and safe ways. Lets explain shortly:
 
