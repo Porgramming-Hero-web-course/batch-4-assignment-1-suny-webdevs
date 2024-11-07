@@ -1,28 +1,19 @@
 type Circle = {
-  shape: "circle"
+  shape: string
   radius: number
 }
 type Rectangle = {
-  shape: "rectangle"
+  shape: string
   width: number
   height: number
 }
 
 const calculateShapeArea = (param: Circle | Rectangle): number => {
-  if (param.shape === "circle") {
+  if ("radius" in param) {
     return parseFloat((Math.PI * param.radius ** 2).toFixed(2))
-  } else if (param.shape === "rectangle") {
+  } else if ("width" in param) {
     return param.width * param.height
   } else {
     return 0
   }
 }
-
-const circleArea = calculateShapeArea({ shape: "circle", radius: 5 })
-console.log(circleArea)
-const rectangleArea = calculateShapeArea({
-  shape: "rectangle",
-  width: 4,
-  height: 6,
-})
-console.log(rectangleArea)
