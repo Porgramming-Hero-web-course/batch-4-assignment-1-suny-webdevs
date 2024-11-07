@@ -1,3 +1,9 @@
-const removeDuplicates = (param: number[]): number[] => {
-  return param.filter((number, index) => param.indexOf(number) === index)
+const removeDuplicates = (numbers: number[]): number[] => {
+  const result: number[] = []
+  numbers.map((num) => {
+    if (!result.includes(num)) {
+      result.push(num)
+    }
+  })
+  return result
 }
