@@ -11,14 +11,14 @@ Union and intersection types are two powerful features in TypeScript that help d
 **Example**:
 
 ```typescript
-let value: string | number
+const x: string | number
 
-value = "Hello" // Okay
-value = 42 // Okay
-value = true // Error: 'boolean' is not assignable to 'string | number'
+x = "Hello"
+x = 42
+x = true
 ```
 
-In this case, the variable `value` can either be a **string** or a **number**, but not a **boolean**.
+In this case, the variable `x` can either be a **string** or a **number**, but not a **boolean**.
 
 ### **Intersection Types**:
 
@@ -37,10 +37,10 @@ type Employee = {
   jobTitle: string
 }
 
-type EmployeePerson = Person & Employee // Combining both Person and Employee
+type EmployeePerson = Person & Employee
 
 const employee: EmployeePerson = {
-  name: "John",
+  name: "Sunny",
   jobTitle: "Developer",
 }
 ```
